@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
 const Home = () => {
-  // Tab names array
+  
   const tabNames = ['All', 'Music', 'Comedy', 'Drawing'];
-
-  // State to track the active tab
-  const [activeTab, setActiveTab] = useState('All');
-
-  // State for the fetched data
   const [videos, setVideos] = useState([]);
 
-  // Fetch the data when the component mounts
+  const [activeTab, setActiveTab] = useState('All');
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('https://openapi.programming-hero.com/api/videos/category/1000');
         const data = await response.json();
         if (data.status) {
-          setVideos(data.data); // Set the fetched data
+          setVideos(data.data); 
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -36,7 +32,7 @@ const Home = () => {
         return video.category_id === '1001';
       } else if (activeTab === 'Comedy') {
         return video.category_id === '1003';
-      } else if (activeTab === 'Drawing') {
+      } else if (activeTab === 'Drawi') {
         return video.category_id === '1002';
       }
       return false;
@@ -70,7 +66,7 @@ const Home = () => {
                   />
                 </figure>
                 <div className="card-body">
-                  {/* Avatar and Title */}
+                
                   <div className="flex items-center space-x-4">
                     <img
                       className="w-12 h-12 rounded-full"
@@ -79,7 +75,6 @@ const Home = () => {
                     />
                     <div>
                       <h3 className="font-semibold">{video.title || 'Unknown Author'}</h3>
-                      {/* Verified Icon */}
 
                     </div>
                   </div>

@@ -8,7 +8,7 @@ const Navbar = () => {
             <img src={logo} alt="" className="h-9 cur" />
             </div>
             <div className="navbar-center">
-            <button className=" p-2 bg-blue-200 hover:bg-red-600 hover:text-white rounded-lg">Sort by View</button>
+            <button className=" p-2 bg-blue-200 hover:bg-red-60 hover:text-white rounded-lg">Sort by View</button>
 
             </div>
             <div className="navbar-end">
